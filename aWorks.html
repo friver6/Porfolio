@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  %#template to generate a HTML table from a list of tuples (or list of lists, or tuple of tuples or ...)
+  <head>
+    <style>
+      .content-table{
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+      }
+
+      .content-table thead tr{
+        background-color: green;
+        color: white;
+        text-align: left;
+        font-weight: bold;
+        display: table-row;
+      }
+
+      .content-table tbody tr {
+        border-bottom: 1px solid gray;
+      }
+
+
+    </style>
+  </head>
+  <body>
+      <table class="content-table">
+        <thead>
+          <tr>
+            <td>Title</td>
+            <td>Publication year</td>
+          </tr>
+         
+        </thead>
+
+        <tbody>
+      %for row in rows:
+        <tr>
+        %for col in row:
+          <td>{{col}}</td>
+        %end
+        </tr>
+      %end
+        </tbody>
+      </table>
+</body>
+
+</html>
